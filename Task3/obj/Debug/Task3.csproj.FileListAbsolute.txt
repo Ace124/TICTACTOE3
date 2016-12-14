@@ -1,0 +1,6 @@
+H:\Kursai\4 kursas\Funkcinis\Task3\Task3\bin\Debug\Task3.exe.config
+H:\Kursai\4 kursas\Funkcinis\Task3\Task3\bin\Debug\Task3.exe
+H:\Kursai\4 kursas\Funkcinis\Task3\Task3\bin\Debug\Task3.pdb
+H:\Kursai\4 kursas\Funkcinis\Task3\Task3\obj\Debug\Task3.csprojResolveAssemblyReference.cache
+H:\Kursai\4 kursas\Funkcinis\Task3\Task3\obj\Debug\Task3.exe
+H:\Kursai\4 kursas\Funkcinis\Task3\Task3\obj\Debug\Task3.pdb
