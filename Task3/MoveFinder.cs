@@ -57,6 +57,7 @@ namespace Task3
 
         public static Maybe<Move> findMove(List<Move> moves)
         {
+            if (moves.Count == 1 && !moves.Exists(item => item.Item1 == 1 && item.Item2 == 1 && item.Item3 == 'x') && !moves.Exists(item => item.Item1 == 1 && item.Item2 == 1 && item.Item3 == 'o')) return new Move(1, 1, 'o');
             if (moves.Count == 1 && !moves.Exists(item => item.Item1 == 0 && item.Item2 == 0 && item.Item3 == 'x') && !moves.Exists(item => item.Item1 == 0 && item.Item2 == 0 && item.Item3 == 'o')) return new Move(0, 0, 'o');
             if (moves.Count == 1 && !moves.Exists(item => item.Item1 == 2 && item.Item2 == 0 && item.Item3 == 'x') && !moves.Exists(item => item.Item1 == 2 && item.Item2 == 0 && item.Item3 == 'o')) return new Move(2, 0, 'o');
             // Collums defense

@@ -14,21 +14,20 @@ namespace Task3
 
             var decodedMessage = MessageDecoder.ParseMoves(message);
 
-            if (Validation.ValidateMoves(decodedMessage)) return "There is a winner";
+            if (Validation.ValidateMoves(decodedMessage)) return "Game is over";
 
             if (MoveFinder.tryToWin(decodedMessage).isNothing)
             {
                 var newMove = MoveFinder.findMove(decodedMessage);
                 var newMessage = MessageEncoder.UpdateMessage(message, newMove);
-                Task postNewMessageTask = Task.Factory.StartNew(() => GameHttpClient.Post(gameId, newMessage));
-                postNewMessageTask.Wait();
+                GameHttpClient.Post(gameId, newMessage);
             }
             else
             {
                 var newMove = MoveFinder.tryToWin(decodedMessage);
                 var newMessage = MessageEncoder.UpdateMessage(message, newMove);
-                Task postNewMessageTask = Task.Factory.StartNew(() => GameHttpClient.Post(gameId, newMessage));
-                postNewMessageTask.Wait();
+                GameHttpClient.Post(gameId, newMessage);
+                return "I win";
             }
             return Play(gameId);
         }  

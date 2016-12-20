@@ -19,10 +19,10 @@ namespace Task3
             request.Method = "GET";
             request.Accept = "application/json+list";
 
-            var responseStream = request.GetResponse().GetResponseStream();
+            Stream responseStream = request.GetResponse().GetResponseStream();
 
-            var reader = new StreamReader(responseStream);
-            var message = reader.ReadToEnd();
+            StreamReader reader = new StreamReader(responseStream);
+            string message = reader.ReadToEnd();
 
             responseStream.Close();
             reader.Close();
